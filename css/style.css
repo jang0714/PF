@@ -1,0 +1,364 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, #FFBEEF, #9AE4FF);
+    position: relative;
+
+} */
+body {
+    height: 4000px;
+}
+
+.bg {
+    position: relative;
+    background: linear-gradient(to bottom, #FFBEEF, #9AE4FF);
+    width: 100%;
+    height: 3950px;
+}
+
+/* .floating {
+    position: fixed;
+    color: rgba(0, 0, 0, 0.1);
+    animation: updown 2s ease-in-out infinite;
+}
+
+@keyframes updown {
+
+    0%,
+    100% {
+        transform: translate(10px, 10px);
+    }
+
+    50% {
+        transform: translate(10px, 30px);
+    }
+} */
+
+.about {
+    font-family: "Cherry Bomb One", system-ui;
+    font-size: 20rem;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+}
+
+.jhj {
+    font-family: "Cherry Bomb One", system-ui;
+    font-size: 20rem;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.name {
+  font-size: 10rem;
+  line-height: 13rem;
+}
+
+/* .fa-arrow-down {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    animation: arrow 2s linear infinite;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.2);
+} */
+
+/* @keyframes arrow {
+
+    0%,
+    100% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+} */
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.gallery {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.gallery li {
+    flex: 1;
+    transition: all .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery li:hover {
+    flex: 3;
+}
+
+.gallery li .season {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h2 {
+    text-align: center;
+    font-family: 'hyunjeong';
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+}
+
+.gallery li:nth-child(1)::before {
+    background: url(../images/KakaoTalk_20250917_095129162_02.jpg) no-repeat center/cover;
+}
+
+.gallery li:nth-child(2)::before {
+    background: url(../images/KakaoTalk_20250917_095129162.jpg) no-repeat center/cover;
+}
+
+.gallery li:nth-child(3)::before {
+    background: url(../images/KakaoTalk_20250917_095129162_01.jpg) no-repeat center/cover;
+}
+
+.gallery li:nth-child(4)::before {
+    background: url(../images/KakaoTalk_20250917_095129162_03.jpg) no-repeat center/cover;
+}
+
+.gallery li::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    filter: blur(3px);
+    z-index: 0;
+}
+
+.gallery li:hover::before {
+    filter: blur(0);
+}
+
+@font-face {
+    font-family: 'hyunjeong';
+    src: url('../cute_notes/Cute\ Notes.ttf');
+}
+
+@font-face {
+    font-family: 'JHJ';
+    src: url('../온글잎\ 데이지.ttf');
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    /* padding: 20vh 7vw 14vh 20vw; */
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.popup.active {
+    opacity: 1;
+    left: 0;
+}
+
+.left-box {
+    width: 20%;
+    text-align: center;
+    font-family: 'JHJ';
+}
+
+.right-box {
+    width: 80%;
+    height: 100%;
+
+}
+
+.mySwiper {
+    width: 100%;
+    height: 100%;
+
+}
+
+.swiper-wrapper,
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.popup-profile {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    z-index: 10000;
+    opacity: 0;
+}
+
+.popup-profile.active {
+    left: 0;
+    opacity: 1;
+}
+
+.profile-box {
+    display: flex;
+    width: 70%;
+    height: 70%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-direction: row;
+}
+
+.profile-left {
+    flex: 1;
+    background: linear-gradient(to top, #FFBEEF, #74c1dd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-left img {
+    width: 60%;
+    border-radius: 30%;
+}
+
+.profile-right {
+    flex: 2;
+    padding: 40px;
+    font-family: 'JHJ';
+}
+
+.profile-right p {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-right ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 100px;
+}
+
+.profile-right li {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.popup-profile .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: 'JHJ';
+}
+
+
+.popup figure {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup figure iframe {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    /* margin-right: 200px; */
+
+}
+
+.popup .text p {
+    font-size: 6rem;
+    margin-bottom: 60px;
+    font-family: 'JHJ';
+    color: yellow;
+}
+
+.popup .text button {
+    font-size: 2rem;
+    background-color: transparent;
+    /* transparent : 투명 */
+    color: red;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-family: 'JHJ';
+}
+
+/* .popup .nextRow {
+    font-size: 2rem;
+    position: absolute;
+    left:97%;
+    cursor: pointer;
+}
+
+.popup .previusRow {
+    font-size: 2rem;
+    position: absolute;
+    left:1%;
+    cursor: pointer;
+} */
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    /* opacity: 0.7; */
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    color: white;
+}
